@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Aurorachama/social-netowork-api#readme",
   "dependencies": {
+    "date-and-time": "^2.3.1",
     "express": "^4.17.3",
     "mongoose": "^6.3.0"
   }
