@@ -2,7 +2,7 @@ const date = require('date-and-time');
 const { Schema, model } = require('mongoose');
 const Reaction = require('./Reaction');
 
-const userSchema = new Schema(
+const thoughtSchema = new Schema(
   {
     thoughtText: {
       type: String,
@@ -18,33 +18,27 @@ const userSchema = new Schema(
       get: date,
     },
 
-    thoughts: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: "Thought",
-        }
-    ],
+    username: {
+      type: String,
+      required: true,
+    },
 
-    friends: [
-        {
-            type:Schema.Types.ObjectId,
-            ref: "User",
-        }
-    ],
+    reactions: [Reaction],
   },
   {
     toJSON: {
       virtuals: true,
+      getters: true,
     },
     // id: false,
   }
 );
 
-userSchema.virtual("friendCount")
+thoughtSchema.virtual("reactionCount")
     .get(function () {
-        return (this.friends.length) ? (this.friends.length) : (0);
+        return (this.reactions.length) ? (this.reactions.length) : (0);
 });
 
-const User = model('user', userSchema);
+const Thought = model('thought', thoughtSchema);
 
-module.exports = User;
+module.exports = Thought;
