@@ -39,9 +39,6 @@ This is a api for social media platform for the interaction of database using No
 <br>
 
 ---
-<br>
-<br>
-<br>
 
 ## User Guide
 User then can type 
@@ -147,4 +144,4 @@ DELETE request (eg: DELETE: api/thoughts/1d11/reactions)
 [Date-and-time](https://github.com/knowledgecode/date-and-time) <br>
 
 ## Video Demo
-[![Video demo](./commencing.png)]()
+[![Video demo](./start.png)](https://watch.screencastify.com/v/hkzHpuGb6RB14ZaQn2Do)

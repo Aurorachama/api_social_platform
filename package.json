@@ -9,17 +9,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Aurorachama/social-netowork-api.git"
+    "url": "git+https://github.com/Aurorachama/api_social_platform.git"
   },
   "author": "Aurorachama",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Aurorachama/social-netowork-api/issues"
+    "url": "https://github.com/Aurorachama/api_social_platform/issues"
   },
-  "homepage": "https://github.com/Aurorachama/social-netowork-api#readme",
+  "homepage": "https://github.com/Aurorachama/api_social_platform#readme",
   "dependencies": {
-    "date-and-time": "^2.3.1",
     "express": "^4.17.3",
+    "moment": "^2.29.3",
     "mongoose": "^6.3.0"
   }
 }
