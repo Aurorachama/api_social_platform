@@ -39,16 +39,16 @@ module.exports = {
     },
 
     addFriend(req,res) {
-        User.findOneAndUpdate({_id: req.params.userId}, {$addToSet: req.params.fdId}, {runValidators: true, new:true })
+        User.findOneAndUpdate({_id: req.params.userId}, {$addToSet: {friends: req.params.friendId}}, {runValidators: true, new:true })
         .then((user) => 
-            (user) ? (res.json(`Successfully added friend ${req.body.fdId}`)) : (res.status(404).json({message: 'No user with this ID, Please try again'})))
+            (user) ? (res.json(`Successfully added friend`)) : (res.status(404).json({message: 'No user with this ID, Please try again'})))
         .catch((err) => { return res.status(500).json(err)});
     },
 
     deleteFriend(req, res) {
-        User.findOneAndUpdate({ _id: req.params.userId }, { $pull: { friends: req.params.fdId } }, { runValidators: true, new: true })
+        User.findOneAndUpdate({ _id: req.params.userId }, { $pull: { friends: req.params.friendId } }, { runValidators: true, new: true })
         .then((user) => 
-            (user) ? (res.json(`Successfully deleted friend ${req.body.fdId}`)) : (res.status(404).json({message: 'No user with this ID, Please try again'})))
+            (user) ? (res.json(`Successfully deleted friend`)) : (res.status(404).json({message: 'No user with this ID, Please try again'})))
           .catch((err) => res.status(500).json(err));
     },
 };
